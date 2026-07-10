@@ -18,9 +18,8 @@ jobs:
 
       - name: Generate debug keystore
         run: |
-          mkdir -p "./daily-routine(1)"
           keytool -genkeypair -v \
-            -keystore "./daily-routine(1)/debug.keystore" \
+            -keystore "./debug.keystore" \
             -alias androiddebugkey \
             -keyalg RSA -keysize 2048 \
             -validity 10000 \
@@ -30,8 +29,7 @@ jobs:
 
       - name: Create google-services.json
         run: |
-          mkdir -p "./daily-routine(1)/app"
-          cat > "./daily-routine(1)/app/google-services.json" << 'EOF'
+          cat > "./app/google-services.json" << 'EOF'
           {
             "project_info": {
               "project_number": "000000000000",
@@ -59,10 +57,9 @@ jobs:
 
       - name: Build Debug APK
         run: gradle assembleDebug
-        working-directory: "./daily-routine(1)"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: "./daily-routine(1)/app/build/outputs/apk/debug/app-debug.apk"
+          path: "app/build/outputs/apk/debug/app-debug.apk"
