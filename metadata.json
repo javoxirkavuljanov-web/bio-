@@ -1,0 +1,6 @@
+{
+  "name": "Daily Routine",
+  "description": "Полноценный органайзер режима дня с привычками, задачами, Помодоро и временем намаза.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
