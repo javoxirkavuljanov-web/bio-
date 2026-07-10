@@ -18,6 +18,7 @@ jobs:
 
       - name: Generate debug keystore
         run: |
+          mkdir -p "./daily-routine(1)"
           keytool -genkeypair -v \
             -keystore "./daily-routine(1)/debug.keystore" \
             -alias androiddebugkey \
