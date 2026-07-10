@@ -30,6 +30,7 @@ jobs:
 
       - name: Create google-services.json
         run: |
+          mkdir -p "./daily-routine(1)/app"
           cat > "./daily-routine(1)/app/google-services.json" << 'EOF'
           {
             "project_info": {
